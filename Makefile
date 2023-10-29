@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_putnbrs.c
+SRCS = ft_printf.c ft_putnbrs.c ft_putchars.c ft_puthex.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -9,7 +9,7 @@ HEADER = ft_printf.h
 FLAGS = -Wall -Wextra -Werror
 
 %.o : %c
-	gcc $(FLAGS) -c $< -I$(HEADER) -o $@
+	gcc $(FLAGS) -c $< -o $@ -I$(HEADER)
 
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
